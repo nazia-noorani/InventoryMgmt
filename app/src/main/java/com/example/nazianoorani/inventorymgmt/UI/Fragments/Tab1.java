@@ -45,20 +45,9 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         }
         fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(this);
-        // RecyclerView has fixed size this improves performance
-        //        recyclerView.setHasFixedSize(true);
-//        adapter = new CardAdapter();
-//        initView();
-
 
         return view;
     }
-//    void initView(){
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-//        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        recyclerView.setAdapter(adapter);
-//    }
 
 
     @Override
