@@ -8,10 +8,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-<<<<<<< HEAD
+
 import android.util.Log;
-=======
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
+
+
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -93,16 +93,16 @@ public class MainActivity extends AppCompatActivity{
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
-<<<<<<< HEAD
+
         super.onActivityResult(requestCode, resultCode, intent);
         Log.e("Result Activity", "Working");
-=======
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
+
+
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.pager);
         fragment.onActivityResult(requestCode, resultCode, intent);
 
 
-<<<<<<< HEAD
+
        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (scanResult != null)
 		{
@@ -110,12 +110,12 @@ public class MainActivity extends AppCompatActivity{
 		}
             // handle scan result
 /*
-=======
+
 /*        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (scanResult != null) {
             // handle scan result
 
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
+
 //            String s = "http://www.google.com/search?q=";
 //            s += scanResult.getContents();
 

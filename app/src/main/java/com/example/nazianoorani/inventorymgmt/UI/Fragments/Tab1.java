@@ -6,10 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-<<<<<<< HEAD
+
 import android.util.Log;
-=======
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +65,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-<<<<<<< HEAD
+
         Log.e("Result Scanned", scanResult.getContents() + "  " + scanResult.toString());
 
 
@@ -85,59 +84,28 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
 
 @Override
-public void onClick(View v) {
-        switch(v.getId()){
-        case R.id.fab :
+public void onClick(View v)
+{
+    switch (v.getId())
+    {
+        case R.id.fab:
 
-        IntentIntegrator integrator = new IntentIntegrator(getActivity());
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
-        integrator.setPrompt("Scan a barcode");
-        integrator.setCameraId(0);  // Use a specific camera of the device
-        integrator.setBeepEnabled(false);
-        integrator.setBarcodeImageEnabled(true);
-        integrator.initiateScan();
+            IntentIntegrator integrator = new IntentIntegrator(getActivity());
+            integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
+            integrator.setPrompt("Scan a barcode");
+            integrator.setCameraId(0);  // Use a specific camera of the device
+            integrator.setBeepEnabled(false);
+            integrator.setBarcodeImageEnabled(true);
+            integrator.initiateScan();
 
-        break;
-=======
-        if (scanResult != null) {
+            break;
 
-        }
 
     }
-
-    public void handelScannedResult(Bundle bundle){
-
-      addItemLayout.setVisibility(View.VISIBLE);
-
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.fab :
-
-                IntentIntegrator integrator = new IntentIntegrator(getActivity());
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
-                integrator.setPrompt("Scan a barcode");
-                integrator.setCameraId(0);  // Use a specific camera of the device
-                integrator.setBeepEnabled(false);
-                integrator.setBarcodeImageEnabled(true);
-                integrator.initiateScan();
-                                break;
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
-
-
-        }
-
-<<<<<<< HEAD
-        }
-
-
-        }
-=======
-    }
-
 
 }
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
+}
+
+
+
+
