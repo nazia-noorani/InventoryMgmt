@@ -1,11 +1,8 @@
 package com.example.nazianoorani.inventorymgmt.UI.Fragments;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -14,8 +11,6 @@ import android.view.MenuItem;
 import com.example.nazianoorani.inventorymgmt.Adapter.ViewPagerAdapter;
 import com.example.nazianoorani.inventorymgmt.R;
 import com.example.nazianoorani.inventorymgmt.Utils.SlidingTabLayout;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -93,28 +88,6 @@ public class MainActivity extends AppCompatActivity{
         fragment.onActivityResult(requestCode, resultCode, intent);
 
 
-/*        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if (scanResult != null) {
-            // handle scan result
 
-//            String s = "http://www.google.com/search?q=";
-//            s += scanResult.getContents();
-
-
-            Bundle bundle=new Bundle();
-            bundle.putString("scanResult", scanResult.getContents());
-            Tab1 tab1 = new Tab1();
-            tab1.setArguments(bundle); // This line is needed...
-            tab1.handelScannedResult(bundle);
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            transaction.replace(R.id.pager, tab1);
-//            transaction.addToBackStack(null);
-//            transaction.commit();
-//            Intent myIntent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
-//            startActivity(myIntent1);
-
-        }*/
-        // else continue with any other code you need in the method
-        //...
     }
 }
