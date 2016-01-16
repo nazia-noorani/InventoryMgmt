@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+
+import android.util.Log;
+
+
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -84,10 +88,46 @@ public class MainActivity extends AppCompatActivity{
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
+
+        super.onActivityResult(requestCode, resultCode, intent);
+        Log.e("Result Activity", "Working");
+
+
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.pager);
         fragment.onActivityResult(requestCode, resultCode, intent);
 
 
+       IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanResult != null)
+		{
+			Log.e("Scan reslt", scanResult.getContents());
+		}
+            // handle scan result
+/*
 
+/*        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanResult != null) {
+            // handle scan result
+
+
+//            String s = "http://www.google.com/search?q=";
+//            s += scanResult.getContents();
+
+
+            Bundle bundle=new Bundle();
+            bundle.putString("scanResult", scanResult.getContents());
+            Tab1 tab1 = new Tab1();
+            tab1.setArguments(bundle); // This line is needed...
+            tab1.handelScannedResult(bundle);
+//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//            transaction.replace(R.id.pager, tab1);
+//            transaction.addToBackStack(null);
+//            transaction.commit();
+//            Intent myIntent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
+//            startActivity(myIntent1);
+
+        }*/
+        // else continue with any other code you need in the method
+        //...
     }
 }

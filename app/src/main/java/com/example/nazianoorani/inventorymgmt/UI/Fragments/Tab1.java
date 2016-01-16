@@ -6,6 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,57 +45,56 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         }
         fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(this);
-        // RecyclerView has fixed size this improves performance
-        //        recyclerView.setHasFixedSize(true);
-//        adapter = new CardAdapter();
-//        initView();
-
 
         return view;
     }
-//    void initView(){
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-//        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        recyclerView.setAdapter(adapter);
-//    }
 
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+
+        Log.e("Result Scanned", scanResult.getContents() + "  " + scanResult.toString());
+
+
         if (scanResult != null) {
 
+            Log.e("Result Scanned",scanResult.getContents()+"  "+ scanResult.toString());
         }
 
-    }
+        }
 
     public void handelScannedResult(Bundle bundle){
 
-      addItemLayout.setVisibility(View.VISIBLE);
-
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.fab :
-
-                IntentIntegrator integrator = new IntentIntegrator(getActivity());
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
-                integrator.setPrompt("Scan a barcode");
-                integrator.setCameraId(0);  // Use a specific camera of the device
-                integrator.setBeepEnabled(false);
-                integrator.setBarcodeImageEnabled(true);
-                integrator.initiateScan();
-                                break;
-
+        addItemLayout.setVisibility(View.VISIBLE);
 
         }
 
+
+@Override
+public void onClick(View v)
+{
+    switch (v.getId())
+    {
+        case R.id.fab:
+
+            IntentIntegrator integrator = new IntentIntegrator(getActivity());
+            integrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
+            integrator.setPrompt("Scan a barcode");
+            integrator.setCameraId(0);  // Use a specific camera of the device
+            integrator.setBeepEnabled(false);
+            integrator.setBarcodeImageEnabled(true);
+            integrator.initiateScan();
+
+            break;
+
+
     }
 
-
 }
+}
+
+
+
+
