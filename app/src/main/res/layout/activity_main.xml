@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".UI.Fragments.MainActivity">
 
-    <com.example.nazianoorani.inventorymgmt.Utils.SlidingTabLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:background="@color/ColorPrimary"/>
+        ></FrameLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        ></android.support.v4.view.ViewPager>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Add Items"
+        android:id="@+id/btn_add_items"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="135dp"
+        android:layout_below="@+id/frame_container"
+        android:layout_centerHorizontal="true" />
 
-</LinearLayout>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Remove Items"
+        android:id="@+id/btn_remove_item"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="69dp"
+        android:layout_below="@+id/btn_add_items"
+        android:layout_alignStart="@+id/btn_add_items" />
+
+
+</RelativeLayout>

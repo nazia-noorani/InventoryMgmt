@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/InventoryMgmt-master.iml" filepath="$PROJECT_DIR$/InventoryMgmt-master.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/InventoryMgmt.iml" filepath="$PROJECT_DIR$/InventoryMgmt.iml" />
->>>>>>> a101816ed45b6842c033ab706b1150c082ae221c
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
